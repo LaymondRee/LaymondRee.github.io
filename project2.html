@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PCB Filter Fixture</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>PCB Filter Fixture</h1>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html" class="active">&#11164;</a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2>Objective</h2>
+								<p>There were two main goals for this project: design and create a bode plot script for the 2 Series MSO and a configurable first order PCB filter. The requirements for the bode plot script were high accuracy, configurable bandwidth/resolution capabilities, and user friendly for consumer use. The  requirements for the filter board were cost effectiveness (under $20) and intuitive configuration settings.</p>
+								<h2>Process</h2>
+								<p>The hardware setup for the bode plot script on other scope models used both the AFG and Auxiliary  outputs, however the 2 Series MSO combined both these outputs which meant a different set up was  needed. The chosen revised setup would replace the Auxiliary output signal with the AFG output signal.  All hardware connections are as follows: AFG connects to CH2 and input of DUT and CH1 connects to the  output of the DUT.</p>
+
+								<div class="swiper-slide"><img src="images/project2.1.1.png"></div>
+
+								<p>The script was written using Python and uses SCPI commands to control the scope. The plan was to compare the amplitude and phase of the AFG output with the DUT output at different frequencies within a selected range. This was done by changing the frequency of the AFG output and adjusting the vertical and horizontal scales for data acquisition. To increase accuracy, synchronization methods and sleep commands were used to ensure stable measurements for each acquisition. Below are script results from low and high pass configurations of varying cutoff frequencies.</p>
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project2.2.1.png"></div>
+										<div class="swiper-slide"><img src="images/project2.2.2.png"></div>
+										<div class="swiper-slide"><img src="images/project2.2.3.png"></div>
+										<div class="swiper-slide"><img src="images/project2.2.4.png"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								
+								<p>A design for the individual low, high, and band pass filters was designed and simulated in LTSpice. Each  design only used resistor and capacitor components. The idea was to take advantage of the similarities in designs between filter types by combining them together. By manipulating current paths with switches such that resistors and capacitors are reused would reduce the required number of resistors and capacitors in half.</p>
+								
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project2.3.1.png"></div>
+										<div class="swiper-slide"><img src="images/project2.3.2.png"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								
+								<h2>Result</h2>
+								<p>When testing the completed filter board using the bode plot script, the values for the cutoff frequencies were within 5% of the expected value. The completed filter board is shown below and the code for the bode plot script can be seen <a href="https://github.com/LaymondRee/BodePlotMSO" target="_blank">here</a>.</p>
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project2.4.1.jpg"></div>
+										<div class="swiper-slide"><img src="images/project2.4.2.jpg"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<!--
+					<div class="contact">
+						<form onsubmit="sendEmail(); reset(); return false">
+							<h1>Contact</h1>
+							<input type="text" id="name" placeholder="Name" required>
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="text" id="subject" placeholder="Subject" required>
+							<textarea id="message" rows="4" placeholder="Message"></textarea>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+					-->
+					<!--<section>
+						<h2>Contact Information</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+							<dd>(971) 227-6110</dd>
+							<dt>Email</dt>
+							<dd>leeray@oregonstate.edu</dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://github.com/LaymondRee" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/raymondlee0214/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</section>-->
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+			<script>
+				const swiper = new Swiper('.swiper', {
+				loop: true,
+
+				pagination: {
+					el: '.swiper-pagination	',
+					clickable: true,
+				},
+
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				});
+			</script>
+	</body>
+</html>
