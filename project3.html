@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>FPGA Keyboard Piano</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>FPGA Keyboard Piano</h1>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html" class="active">&#11164;</a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2>Objective</h2>
+								<p>The goal of this project was to implement a piano using an FPGA, amplifier, and speaker that takes data/clock signals from a PS/2 keyboard as inputs. The requirements for this implementation was to be capable of playing an entire octave from 440 Hz to 880 Hz while only using the 50 MHz clock provided by the FPGA.</p>
+								<h2>Process</h2>
+								<p>The first step in the planning process was to determine all the necessary hardware components and how they would be connected. The PS/2 keyboard clock and data signals would connect to the FPGA. Within the FPGA, digital logic modules will be used to decode the key pressed and output a divided clock signal to match the respective note. This signal will then be amplified before being outputted by the speaker.</p>
+
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project3.1.1.png"></div>
+										<div class="swiper-slide"><img src="images/project3.1.2.png"></div>
+
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+
+								<p>All digital logic modules were designed in Quartus Prime using block diagrams or VHDL. The main modules include a clock divider, decoder, and note selector. The clock divider consists of a counter and two comparators that can be configured logic high and low after a specified number of 50 MHz rising edges. The note selection is an 8 input mux that has the frequency of each note as inputs. The decoder uses conditional and case statements in VHDL to determine the key pressed based on the received scancode from the PS/2 data signal.</p>
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project3.2.1.png"></div>
+										<div class="swiper-slide"><img src="images/project3.2.2.png"></div>
+										<div class="swiper-slide"><img src="images/project3.2.3.png"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								
+								<p>Each module was simulated in ModelSim before physically implementing the design. For the clock divider, the test divides the clock signal by 10. The note selector and decoder test all eight cases for the input note and scancode. The results for the following simulations are shown below.</p>
+								
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project3.3.1.png"></div>
+										<div class="swiper-slide"><img src="images/project3.3.2.png"></div>
+										<div class="swiper-slide"><img src="images/project3.3.3.png"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								
+								<h2>Result</h2>
+								<p>After completing the physical implementation of the design, the keyboard was able to play the eight notes as expected. A demonstration of the design can be seen <a href="https://www.youtube.com/watch?v=_DiC5BU7cK4&ab_channel=HughHazim" target="_blank">here</a> and a detailed report of the project can be seen <a href="images/271 Final Project Report Draft.pdf" target="_blank">here</a>.</p>
+
+								<div class="swiper-slide"><img src="images/project3.4.1.png"></div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<!--
+					<div class="contact">
+						<form onsubmit="sendEmail(); reset(); return false">
+							<h1>Contact</h1>
+							<input type="text" id="name" placeholder="Name" required>
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="text" id="subject" placeholder="Subject" required>
+							<textarea id="message" rows="4" placeholder="Message"></textarea>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+					-->
+					<!--<section>
+						<h2>Contact Information</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+							<dd>(971) 227-6110</dd>
+							<dt>Email</dt>
+							<dd>leeray@oregonstate.edu</dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://github.com/LaymondRee" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/raymondlee0214/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</section>-->
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+			<script>
+				const swiper = new Swiper('.swiper', {
+				loop: true,
+
+				pagination: {
+					el: '.swiper-pagination	',
+					clickable: true,
+				},
+
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				});
+			</script>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DC Power Supply</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>DC Power Supply</h1>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html" class="active">&#11164;</a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2>Objective</h2>
+								<p>The goal for this project was create a DC to DC power supply that met given customer and engineering requirements regarding cost, safety, accuracy, readability, and configurability. In order to satisfy these requirements, careful consideration when choosing components was necessary throughout the planning process.</p>
+								<h2>Process</h2>
+								<p>The system can be split into six major blocks shown in the top level block diagram below. DC power will be fed into the current control module that will limit current to 1A before feeding the output to the voltage regulator. The Arduino along with the code will interface with the current control, voltage regulator, and LCD to allow user inputted SCPI commmands to control the system output for each individual channel.</p>
+
+								<div class="swiper-slide"><img src="images/project4.1.png"></div>
+
+								<p>The two main circuit elements were for the current control and voltage regulator modules. The current control module uses an LM317 linear regulator to set the maximum output current. The voltage regulator uses two LM2673 buck converters and two MCP41HVX digital potentiometers to set the output voltage of each channel. The Arduino communicates with the digital potentiometers using SPI and outputs the measured voltage to the LCD.</p>
+								
+								<div class="swiper-slide"><img src="images/project4.2.1.png"></div>
+
+								<p>The current control and voltage regulator modules were made into PCBs. Important considerations when designing these PCBs were size, trace width, and ground lead inductance. In order to reduce cost and have a compact design, all PCB elements were placed closely together. Trace width for inputs and outputs were doubled in width to allow 1A to flow without traces overheating. Lastly, all paths to ground were kept short and a ground plane was added to reduce noise caused by ground lead inductance.</p>
+								
+								<div class="swiper-slide"><p style="text-align:center;"><img src="images/project4.2.2.png" style="width:700px;height:700px;"></p></div>
+								
+								<h2>Result</h2>
+								<p>The final design mounts all components into a 3d printed enclosure. Bannana plugs are used for input and output of the system. A detailed report of the project can be seen <a href="images/ECE 342 System Verification.pdf" target="_blank">here</a>.</p>
+								<div class="swiper-slide"><p style="text-align:center;"><img src="images/project4.3.png" style="width:900px;height:700px;"></p></div>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<!--
+					<div class="contact">
+						<form onsubmit="sendEmail(); reset(); return false">
+							<h1>Contact</h1>
+							<input type="text" id="name" placeholder="Name" required>
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="text" id="subject" placeholder="Subject" required>
+							<textarea id="message" rows="4" placeholder="Message"></textarea>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+					-->
+					<!--<section>
+						<h2>Contact Information</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+							<dd>(971) 227-6110</dd>
+							<dt>Email</dt>
+							<dd>leeray@oregonstate.edu</dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://github.com/LaymondRee" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/raymondlee0214/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</section>-->
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+			<script>
+				const swiper = new Swiper('.swiper', {
+				loop: true,
+
+				pagination: {
+					el: '.swiper-pagination	',
+					clickable: true,
+				},
+
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				});
+			</script>
+	</body>
+</html>

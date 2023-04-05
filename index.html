@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Raymond Lee Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
+						<h1>Raymond Lee</h1>
+						<p>Electrical & Computer Engineering Student<br/>
+
+						<ul class="icons">
+							<li><a href="mailto: leeray@oregonstate.edu" class="icon fa fa-envelope alt"><span class="label">Email</span></a></li>
+							<li><a href="https://github.com/LaymondRee" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/LaymondRee" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">About</a></li>
+							<li><a href="#first">Projects</a></li>
+							<li><a href="#second">Resume</a></li>
+							<!--<li><a href="#footer">Contact</a></li>-->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main special">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>About</h2>
+										</header>
+										<p>I'm an electrical & computer engineering student at Oregon State University with minors in computer science and mathematics. I have experience in working with test/measurement equipment, analog/digital signals, programming, and PCB design. I am currently looking for opportunites where I can apply my experience from school and past internships to make a meaningful contribution.</p>
+										<ul class="actions">
+										</ul>
+									</div>
+									<!-- <span class="image"><img src="images/pic01.jpg" alt="" /></span> -->
+								</div>
+							</section>
+
+						<!-- First Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Projects</h2>
+								</header>
+								<ul class="features">
+									<li>
+											<span><img src="images/project1.5.jpg" style="border-radius:50%"></span>
+											<h3>RF Switch Network</h3>
+											<p>Twelve switch RF switch network connected with PCBs controlled by web application and Raspberry Pi</p>
+									</li>
+									<li>
+										<img src="images/project4.4.png" style="border-radius:50%">
+										<h3>DC Power Supply</h3>
+											<p>Variable input DC power supply controlled with Arduino and user inputted SCPI commands</p>
+									</li>
+									<li>
+										<img src="images/project3.5.png" style="border-radius:50%">
+										<h3>FPGA Keyboard Piano</h3>
+											<p>Middle octave piano implemented with an FPGA and data/clock signals from PS/2 keyboard</p>
+									</li>
+									<li><a href="project1.html" class="button">View Project</a></li>
+									<li><a href="project2.html" class="button">View Project</a></li>
+									<li><a href="project3.html" class="button">View Project</a></li>
+								</ul>
+
+							</section>
+
+						<!-- Second Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Resume</h2>
+								</header>
+								<img src="images/Raymond Lee - Resume.jpg" style="border: 5px solid lightgray; width: 800px; height: 1130px;">
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="images/Raymond Lee - Resume.pdf" target="_blank" class="button"><i class="fa fa-download"></i> Download</a></li>
+									</ul>
+								</footer>
+							</section>
+
+
+					</div>
+
+				<!-- Footer -->
+				
+					<footer id="footer">
+						<!--
+						<div class="contact">
+							<form onsubmit="sendEmail(); reset(); return false">
+									<h1>Contact</h1>
+								<input type="text" id="name" placeholder="Name" required>
+								<input type="email" id="email" placeholder="Email" required>
+								<input type="text" id="subject" placeholder="Subject" required>
+								<textarea id="message" rows="4" placeholder="Message"></textarea>
+								<button type="submit">Send</button>
+							</form>
+						</div>
+						-->
+						<!--<section>
+							<h2>Contact Information</h2>
+							<dl class="alt">
+								<dt>Phone</dt>
+								<dd>(971) 227-6110</dd>
+								<dt>Email</dt>
+								<dd>leeray@oregonstate.edu</dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://github.com/LaymondRee" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/raymondlee0214/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</section>-->
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<!--
+			<script>
+				function sendEmail(){
+					Email.send({
+						Host : "smtp.elasticemail.com",
+						Username : "leeray@oregonstate.edu",
+						Password : "6A3E9A92B35044C1D606A66CEA290BFA82C1",
+						To : 'leeray@oregonstate.edu',
+						From : document.getElementById("email").value,
+						Subject : "Contact from portfolio",
+						Body : "Name: " + document.getElementById("name").value 
+						+ "<br> Email: " + document.getElementById("email").value
+						+ "<br> Subject: " + document.getElementById("subject").value
+						+ "<br> Message: " + document.getElementById("message").value
+					}).then(
+					message => alert("Message Sent Successfully")
+					);
+				}
+			</script>
+		-->
+	</body>
+</html>

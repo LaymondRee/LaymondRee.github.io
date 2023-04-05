@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>RF Switch Network</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>RF Switch Network</h1>
+					</header>
+
+				<!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html" class="active">&#11164;</a></li>
+                    </ul>
+                </nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2>Objective</h2>
+								<p>The goal for this project was to create a web application capable of remotely controlling the transmission path routing of an RF switch network. The requirement for the web application was to create a control panel with an intuitive user interface. The requirements for the network circuit were to accommodate 12 relay switches with 6 inputs each that would be controlled by Raspberry Pi GPIO pins.</p>
+								<h2>Process</h2>
+								<p>The web application was created using HTML, CSS, and JavaScript for the frontend, and Python Flask for  the backend. Name editing features for channels/nodes and a stopwatch to indicate runtime were also added. The selection, naming, and stopwatch functionalities  were all implemented using JavaScript while the GPIO pins were all handled with Python.</p>
+
+								<div class="swiper-slide"><img src="images/project1.1.1.png"></div>
+
+								<p>To accommodate the 12 relay switches, IO expanders were needed because the Raspberry Pi only provided 26 GPIO pins. SPI IO expanders were chosen over I2C because the switch network is a  lower power application. The chosen IC (MCP23S08) offers 8 GPIO per chip which means 9 IO expanders  would be needed to cover all necessary pins. Because pricing isn’t a limitation for this project, it was decided that using 12 IO expanders would be more ideal for modularizing the circuit design.  </p>
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project1.2.1.jpg"></div>
+										<div class="swiper-slide"><img src="images/project1.2.2.jpg"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								
+								<p>When implementing the SPI IO expanders, there were issues in controlling several GPIO expanders simultaneously. To troubleshoot these issues, the analog and digital SPI signals were viewed in an oscilloscope. In the analog signal, it was found that the voltage source entering the IC wasn’t stable, which was solved by adding a decoupling capacitor to each IC. In the digital signal, it was found that data was being sampled on the falling edge as opposed to the rising edge which was fixed by changing the SPI mode in the code.</p>
+								
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project1.3.1.jpg"></div>
+										<div class="swiper-slide"><img src="images/project1.3.2.jpg"></div>
+										<div class="swiper-slide"><img src="images/project1.3.3.jpg"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+								
+								<h2>Result</h2>
+								<p>The final design fits on a PCB with dimensions 240 mm by 120 mm. It connects to the Raspberry Pi on top and is powered by a power jack on the bottom. Pictures of the design are shown below.</p>
+								<div class="containter">
+									<!-- Slider main container -->
+									<div class="swiper">
+										<!-- Additional required wrapper -->
+										<div class="swiper-wrapper">
+										<!-- Slides -->
+										<div class="swiper-slide"><img src="images/project1.4.1.jpg"></div>
+										<div class="swiper-slide"><img src="images/project1.4.2.jpg"></div>
+										<div class="swiper-slide"><img src="images/project1.4.3.jpg"></div>
+										</div>
+										<!-- If we need pagination -->
+										<div class="swiper-pagination"></div>
+									
+										<!-- If we need navigation buttons -->
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<!--
+					<div class="contact">
+						<form onsubmit="sendEmail(); reset(); return false">
+							<h1>Contact</h1>
+							<input type="text" id="name" placeholder="Name" required>
+							<input type="email" id="email" placeholder="Email" required>
+							<input type="text" id="subject" placeholder="Subject" required>
+							<textarea id="message" rows="4" placeholder="Message"></textarea>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+					-->
+					<!--<section>
+						<h2>Contact Information</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+							<dd>(971) 227-6110</dd>
+							<dt>Email</dt>
+							<dd>leeray@oregonstate.edu</dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://github.com/LaymondRee" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/raymondlee0214/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</section>-->
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+			<script>
+				const swiper = new Swiper('.swiper', {
+				loop: true,
+
+				pagination: {
+					el: '.swiper-pagination	',
+					clickable: true,
+				},
+
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				});
+			</script>
+	</body>
+</html>
